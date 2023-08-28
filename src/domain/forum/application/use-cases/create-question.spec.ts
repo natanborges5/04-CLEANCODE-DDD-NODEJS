@@ -5,10 +5,10 @@ let inMemoryQuestionsRepository: InMemoryQuestionsRepository
 let sut: CreateQuestionUseCase
 
 describe("Create Question", () => {
-beforeEach(() => {
-    inMemoryQuestionsRepository = new InMemoryQuestionsRepository();
-    sut = new CreateQuestionUseCase(inMemoryQuestionsRepository)
-})
+    beforeEach(() => {
+        inMemoryQuestionsRepository = new InMemoryQuestionsRepository();
+        sut = new CreateQuestionUseCase(inMemoryQuestionsRepository)
+    })
 
     it("Should be able to create a question", async () => {
         const {question} = await sut.execute({

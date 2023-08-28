@@ -15,7 +15,7 @@ export class AnswerQuestionUseCase {
     constructor(
         private answerRepository: AnswerRepository,
     ){}
-    async execute({questionId, instructorId, content}: AnswerQuestionUseCaseRequest) {
+    async execute({questionId, instructorId, content}: AnswerQuestionUseCaseRequest): Promise<AnswerQuestionUseCaseResponse> {
         const answer = Answer.create({
             content,
             authorId: new UniqueEntityID(instructorId),
