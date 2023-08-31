@@ -33,7 +33,7 @@ export class Question extends Entity<QuestionProps>{
         return this.props.createdAt
     }
     get updatedAt(){
-        return this.props.createdAt
+        return this.props.updatedAt
     }
     get isNew(): boolean {
         return dayjs().diff(this.props.createdAt, "days") <= 3
